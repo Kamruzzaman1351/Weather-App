@@ -11,4 +11,8 @@ class Weather {
         const wData = await wResquest.json();
         return wData;
     }
+    // Change City
+    changeCity(city) {
+        this.city =city;
+    }
 }

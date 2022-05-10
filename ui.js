@@ -3,6 +3,7 @@ class UI {
     constructor() {
         this.cityUI = document.getElementById("w-location");
         this.descriptionUI = document.getElementById("w-desc");
+        this.descriptionsUI = document.getElementById("w-descs");
         this.tempUI = document.getElementById("w-string");
         this.iconUI = document.getElementById("w-icon");
         this.humidityUI = document.getElementById("w-humidity");
@@ -16,6 +17,7 @@ class UI {
     showUI(res) {
         this.cityUI.textContent = `${res.name},${res.sys.country}`;
         this.descriptionUI.textContent = `${res.weather[0].main}`;
+        this.descriptionsUI.textContent = `${res.weather[0].description}`;
         this.tempUI.textContent = `${this.toFahrenheit(res.main.temp)} F (${this.toCelsius(res.main.temp)} C)`;
         this.iconUI.setAttribute("src",`http://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`);
         this.humidityUI.textContent = `Relative Humidity: ${res.main.humidity} %`;
