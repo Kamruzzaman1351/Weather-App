@@ -1,5 +1,8 @@
+// Init Stroage
+const storage = new Storage;
+const city = storage.getCity();
 // Init Weather
-const weather = new Weather("Dhaka");
+const weather = new Weather(city);
 // Init UI
 const ui = new UI;
 // UI Variables
@@ -26,6 +29,7 @@ function changeWeatherLocation(e) {
     const city = cityUI.value;
     weather.changeCity(city);
     weatherReport();
+    storage.setCity(city)
     // Close Modal
     $('#locModal').modal('hide');
     cityUI.value = '';
