@@ -33,4 +33,5 @@ class UI {
     toFahrenheit(value) {
         return (this.toCelsius(value) * (9/5) + 32).toFixed(1);
     }
+    // Test comment
 }
